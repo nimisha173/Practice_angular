@@ -1,0 +1,21 @@
+<h2>Movie Ticket Booking</h2>
+<div>
+  <label>Movie Name:</label>
+  <input type="text" [(ngModel)]="movieName" />
+</div>
+<div>
+  <label>Date:</label>
+  <input type="date" [(ngModel)]="selectedDate" />
+</div>
+<div>
+  <label>Time:</label>
+  <select [(ngModel)]="selectedTime">
+    <option value="10:00 AM">10:00 AM</option>
+    <option value="1:00 PM">1:00 PM</option>
+    <option value="4:00 PM">4:00 PM</option>
+    <option value="7:00 PM">7:00 PM</option>
+  </select>
+</div>
+<button (click)="bookTicket()">Book Ticket</button>
+
+
