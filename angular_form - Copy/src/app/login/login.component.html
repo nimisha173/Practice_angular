@@ -1,0 +1,36 @@
+<form #form ="ngForm" (ngSubmit)="form.valid&&onsubmit()" >
+
+<div>
+    <label for="firstname">FirstName</label>
+    <input type="text" class="form-control" name="firstname" required #firstname="ngModel" [(ngModel)]="data.firstname">
+    <label class="text-danger" *ngIf="form.submitted && firstname.errors?.['required']">firstname is required</label>
+</div>
+
+<div>
+    <label for="lastname">LastName</label>
+    <input type="text" class="form-control" name="lastname" required #lastname="ngModel" [(ngModel)]="data.lastname">
+    <label class="text-danger" *ngIf="form.submitted && lastname.errors?.['required']">lastname is required</label>
+</div>
+
+<div>
+    <label for="phone">phone</label>
+    <input type="number" class="form-control" name="phone" required #phone="ngModel" [(ngModel)]="data.phone" pattern="(/^\d{10}$/)]">
+    <label class="text-danger" *ngIf="form.submitted && phone.errors?.['required']">phone is required</label>
+    <!-- <label class="text-danger" *ngIf="form.submitted&&phone.errors?.['pattern']">invalid</label> -->
+</div>
+
+<div>
+    <label for="email">email</label>
+    <input type="email" class="form-control" name="email" required #email="ngModel" [(ngModel)]="data.email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$">
+    <label class="text-danger" *ngIf="form.submitted && email.errors?.['required']">email is required</label>
+    <label class="text-danger" *ngIf="form.submitted&&email.errors?.['pattern']">invalid</label>
+</div>
+    
+     <div>
+        <br>
+        <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+    
+   
+
+</form>
