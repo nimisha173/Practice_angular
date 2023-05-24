@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cornflowerblue;
+    text-decoration: solid;
+    font-size: large;
+
+}
+.ul_class{
+    display: flex;
+    list-style: none;
+}
+.ul_class>li{
+    padding: 5px;
+}
